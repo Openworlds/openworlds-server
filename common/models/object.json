@@ -1,0 +1,61 @@
+{
+  "name": "object",
+  "plural": "objects",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "x": {
+      "type": "number",
+      "required": true
+    },
+    "y": {
+      "type": "number",
+      "required": true
+    },
+    "z": {
+      "type": "number",
+      "required": true
+    },
+    "owner": {
+      "type": "number",
+      "required": true
+    },
+    "modified": {
+      "type": "date",
+      "required": true
+    },
+    "model": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "yaw": {
+      "type": "number"
+    },
+    "tilt": {
+      "type": "number"
+    },
+    "roll": {
+      "type": "number"
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "info": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
