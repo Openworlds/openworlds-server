@@ -11,9 +11,17 @@ module.exports = function(app) {
     var objs = [];
     var types = ["Object", "Camera", "Zone", "ParticleEmitter", "Mover"];
     data.split('\n').forEach(function (line) {
-      var elem = line.trim().split(' ');
+      // Skip comment lines (XXX probably only supported by us!)
+      if (line[0] == '#') return;
+      // Skip propdump version line for now
       if (line.indexOf("propdump version") == 0) return;
-      if (elem.length != 14) return;
+      // split at space for first bunch of elements
+      var elem = line.trim().split(' ');
+      // Forget it if the line doesn't have enough elements
+      if (elem.length < 14) return;
+      // Rejoin from 13 on since that should be a continuous string
+      // (which can contain spaces)
+      var str = elem.slice(13).join(' ');
       objs.push({
         owner: parseInt(elem[0]),
 	modified: parseInt(elem[1]) * 1000,
@@ -24,7 +32,7 @@ module.exports = function(app) {
 	tilt: parseInt(elem[6]),
 	roll: parseInt(elem[7]),
 	type: types[parseInt(elem[8])],
-	model: elem[13]
+	model: str.substr(0, parseInt(elem[9])),
       });
     });
     app.models.object.create(objs, function(err,data) {
