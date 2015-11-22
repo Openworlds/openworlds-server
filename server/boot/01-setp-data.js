@@ -25,12 +25,12 @@ module.exports = function(app) {
       objs.push({
         owner: parseInt(elem[0]),
 	modified: parseInt(elem[1]) * 1000,
-	x: parseInt(elem[2]),
-	y: parseInt(elem[3]),
-	z: parseInt(elem[4]),
-	yaw: parseInt(elem[5]),
-	tilt: parseInt(elem[6]),
-	roll: parseInt(elem[7]),
+	x: parseFloat(elem[2]) / 1000,
+	y: parseFloat(elem[3]) / 1000,
+	z: parseFloat(elem[4]) / 1000,
+	yaw: parseInt(elem[5]) / 10,
+	tilt: parseFloat(elem[6]) / 10,
+	roll: parseFloat(elem[7]) / 10,
 	type: types[parseInt(elem[8])],
 	model: str.substr(0, parseInt(elem[9])),
       });
