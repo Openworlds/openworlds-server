@@ -55,7 +55,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "world": {
+      "type": "belongsTo",
+      "model": "world",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

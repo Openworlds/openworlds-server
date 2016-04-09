@@ -1,0 +1,52 @@
+{
+  "name": "world",
+  "plural": "worlds",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "welcomeMsg": {
+      "type": "string"
+    },
+    "minVisibility": {
+      "type": "number",
+      "required": true
+    },
+    "objectPath": {
+      "type": "string",
+      "required": true
+    },
+    "objectRefreshRate": {
+      "type": "number",
+      "required": true
+    },
+    "homePage": {
+      "type": "string"
+    },
+    "entryPoint": {
+      "type": "string"
+    },
+    "objectPassword": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "objects": {
+      "type": "hasMany",
+      "model": "object",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

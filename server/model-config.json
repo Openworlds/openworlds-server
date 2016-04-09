@@ -35,5 +35,9 @@
   "object": {
     "dataSource": "db",
     "public": true
+  },
+  "world": {
+    "dataSource": "db",
+    "public": true
   }
 }
